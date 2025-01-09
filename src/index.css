@@ -1,193 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --primary-bg: #ffffff;
-  --secondary-bg: #f8f9fa;
-  --primary-text: #212529;
-  --secondary-text: #6c757d;
-  --border-color: #dee2e6;
-  --sidebar-bg: #ffffff;
-  --card-bg: #ffffff;
-  --input-bg: #ffffff;
-  --btn-text: #212529;
-  --link-color: #0d6efd;
-  --breadcrumb-color: #6c757d;
-  --sidebar-text: #212529;
-  --sidebar-text-hover: #0d6efd;
-  --sidebar-text-active: #0d6efd;
+/* Add to existing CSS */
+.map-container {
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.dark-mode {
-  --primary-bg: #1a1a1a;
-  --secondary-bg: #141414;
-  --primary-text: #ffffff;
-  --secondary-text: #d1d1d1;
-  --border-color: #404040;
-  --sidebar-bg: #1a1a1a;
-  --card-bg: #242424;
-  --input-bg: #2d2d2d;
-  --btn-text: #ffffff;
-  --link-color: #63a7ff;
-  --breadcrumb-color: #d1d1d1;
-  --sidebar-text: #ffffff;
-  --sidebar-text-hover: #63a7ff;
-  --sidebar-text-active: #63a7ff;
+.map-container:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Global Styles */
-body {
-  background-color: var(--secondary-bg);
-  color: var(--primary-text);
-  transition: background-color 0.3s, color 0.3s;
+.chart-container {
+  max-height: 400px;
 }
 
-/* Sidebar Styles */
-.position-fixed.h-100.bg-white {
-  background-color: var(--sidebar-bg) !important;
-  border-right: 1px solid var(--border-color);
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
 }
 
-.position-fixed.h-100.bg-white a {
-  color: var(--sidebar-text);
-  transition: color 0.2s;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.position-fixed.h-100.bg-white a:hover {
-  color: var(--sidebar-text-hover);
+.slide-up {
+  animation: slideUp 0.3s ease-out;
 }
 
-.position-fixed.h-100.bg-white .text-body-secondary {
-  color: var(--sidebar-text) !important;
-}
-
-.position-fixed.h-100.bg-white .text-success {
-  color: #28a745 !important;
-}
-
-.position-fixed.h-100.bg-white .border-bottom,
-.position-fixed.h-100.bg-white .border-top {
-  border-color: var(--border-color) !important;
-}
-
-.position-fixed.h-100.bg-white h2,
-.position-fixed.h-100.bg-white .h4 {
-  color: var(--sidebar-text) !important;
-}
-
-.position-fixed.h-100.bg-white .text-muted {
-  color: var(--secondary-text) !important;
-}
-
-/* Card Styles */
-.card {
-  background-color: var(--card-bg);
-  border-color: var(--border-color);
-  color: var(--primary-text);
-}
-
-.card-title, .h3, .h4, .h5, h1, h2, h3, h4, h5 {
-  color: var(--primary-text) !important;
-}
-
-/* Form Controls */
-.form-control, .form-select {
-  background-color: var(--input-bg);
-  color: var(--primary-text);
-  border-color: var(--border-color);
-}
-
-.form-control:focus, .form-select:focus {
-  background-color: var(--input-bg);
-  color: var(--primary-text);
-  border-color: var(--link-color);
-}
-
-.form-label {
-  color: var(--primary-text);
-}
-
-/* List Group */
-.list-group-item {
-  background-color: var(--card-bg);
-  color: var(--primary-text);
-  border-color: var(--border-color);
-}
-
-.list-group-item:hover {
-  background-color: var(--secondary-bg);
-}
-
-.list-group-item.active {
-  background-color: var(--link-color);
-  border-color: var(--link-color);
-  color: #ffffff;
-}
-
-/* Text Colors */
-.text-muted {
-  color: var(--secondary-text) !important;
-}
-
-/* Breadcrumb */
-.breadcrumb {
-  color: var(--breadcrumb-color);
-}
-
-/* Table Styles */
-.table {
-  color: var(--primary-text);
-}
-
-.table-bordered {
-  border-color: var(--border-color);
-}
-
-.table td, .table th {
-  border-color: var(--border-color);
-  color: var(--primary-text);
-}
-
-/* Modal Styles */
-.modal-content {
-  background-color: var(--card-bg);
-  color: var(--primary-text);
-}
-
-/* Button Styles */
-.btn-outline-primary {
-  color: var(--link-color);
-  border-color: var(--link-color);
-}
-
-.btn-outline-primary:hover {
-  color: #fff;
-  background-color: var(--link-color);
-  border-color: var(--link-color);
-}
-
-.dark-mode .btn-outline-secondary {
-  color: var(--primary-text);
-  border-color: var(--border-color);
-}
-
-.dark-mode .btn-outline-secondary:hover {
-  background-color: var(--border-color);
-  color: var(--primary-text);
-}
-
-/* Input Group */
-.input-group-text {
-  background-color: var(--input-bg);
-  color: var(--primary-text);
-  border-color: var(--border-color);
-}
-
-/* Custom Styles */
-.action-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
