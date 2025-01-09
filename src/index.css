@@ -1,14 +1,1 @@
-/* Add chart container styles */
-.chart-container {
-  position: relative;
-  height: 300px;
-  min-height: 300px;
-  width: 100%;
-}
-
-/* Add responsive styles */
-@media (max-width: 768px) {
-  .chart-container {
-    height: 250px;
-  }
-}
+...
